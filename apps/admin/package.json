@@ -1,0 +1,14 @@
+{
+  "name": "@rifaq/admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Admin app scaffolded; Next.js implementation starts in deliverable #6'",
+    "typecheck": "echo 'Admin app scaffolded; no source files yet'",
+    "lint": "echo 'Admin app scaffolded; no source files yet'",
+    "test": "echo 'Admin app scaffolded; no tests yet'"
+  },
+  "dependencies": {
+    "@rifaq/shared": "workspace:*"
+  }
+}

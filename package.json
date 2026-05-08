@@ -1,0 +1,14 @@
+{
+  "name": "rifaq-white-label",
+  "version": "0.1.0",
+  "private": true,
+  "description": "White-labeled smart hospitality and cleaning services monorepo for Rifaq / Dclean.",
+  "packageManager": "pnpm@10.28.1",
+  "scripts": {
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "format": "prettier --write ."
+  }
+}
