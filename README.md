@@ -78,6 +78,27 @@ Do not run `corepack enable` from a normal PowerShell window if Windows reports 
 
 If `tsc` is not installed globally, the shared package scripts automatically fall back to `npx --yes --package typescript@5.9.3 tsc`.
 
+
+## GitHub PR conflict resolution
+
+If GitHub says `This branch has conflicts that must be resolved`, keep the current branch versions for these files:
+
+- `.github/workflows/ci.yml`: use `actions/checkout@v4`, `actions/setup-node@v4`, Node `22`, and run `Build` before `Test`.
+- `packages/shared/package.json`: keep the test command that builds TypeScript output before running `node --test`.
+- `package.json`: keep the `dev` and `hub` scripts so the Brand Settings Hub opens directly.
+- `apps/admin/package.json`: keep `dev`, `start`, `build`, `typecheck`, `lint`, and `test` pointing at `dev-server.mjs`.
+- `README.md`: keep the Direct Brand Settings Hub and Windows quick start sections.
+
+After resolving conflicts, run:
+
+```bash
+pnpm check:conflicts
+pnpm lint
+pnpm typecheck
+pnpm build
+pnpm test
+```
+
 ## How white-label switching will work
 
 1. The admin Brand Settings page edits a persisted `BrandConfig` JSON document.
