@@ -15,6 +15,6 @@
     "build": "node ../../scripts/run-tsc.mjs -p tsconfig.json",
     "typecheck": "node ../../scripts/run-tsc.mjs -p tsconfig.json --noEmit",
     "lint": "node ../../scripts/run-tsc.mjs -p tsconfig.json --noEmit",
-    "test": "node --test test/*.test.mjs"
+    "test": "node ../../scripts/run-tsc.mjs -p tsconfig.json && node --test test/*.test.mjs"
   }
 }
