@@ -30,6 +30,75 @@ pnpm build
 pnpm test
 ```
 
+
+## Direct Brand Settings Hub
+
+To open the runnable mock Brand Settings Hub on Windows, double-click `run-hub.cmd` from the project folder, or run:
+
+```powershell
+cd "C:\Users\Ibrah\OneDrive\سطح المكتب\IBRAHIM-codex-build-brand-settings-page"
+.\run-hub.cmd
+```
+
+The hub opens at `http://localhost:3000` and includes a live white-label preview with local mock saving. No `corepack enable` or Administrator permissions are required.
+
+For macOS/Linux or any terminal with pnpm available, run:
+
+```bash
+pnpm dev
+```
+
+## Windows quick start
+
+If this project is on your desktop at a path like `C:\Users\Ibrah\OneDrive\سطح المكتب\IBRAHIM-codex-build-brand-settings-page`, open PowerShell and run:
+
+```powershell
+cd "C:\Users\Ibrah\OneDrive\سطح المكتب\IBRAHIM-codex-build-brand-settings-page"
+.\run-windows.ps1
+```
+
+If PowerShell blocks scripts, use the command prompt script instead:
+
+```powershell
+cd "C:\Users\Ibrah\OneDrive\سطح المكتب\IBRAHIM-codex-build-brand-settings-page"
+.\run-windows.cmd
+```
+
+You can also run the underlying commands manually:
+
+```powershell
+npx --yes pnpm@10.28.1 install
+npx --yes pnpm@10.28.1 typecheck
+npx --yes pnpm@10.28.1 build
+npx --yes pnpm@10.28.1 test
+npx --yes pnpm@10.28.1 lint
+```
+
+Do not run `corepack enable` from a normal PowerShell window if Windows reports `EPERM` under `C:\Program Files\nodejs`; that command needs Administrator permissions. The scripts and `npx --yes pnpm@10.28.1 ...` commands above avoid that permission issue.
+
+If `tsc` is not installed globally, the shared package scripts automatically fall back to `npx --yes --package typescript@5.9.3 tsc`.
+
+
+## GitHub PR conflict resolution
+
+If GitHub says `This branch has conflicts that must be resolved`, keep the current branch versions for these files:
+
+- `.github/workflows/ci.yml`: use `actions/checkout@v5`, `actions/setup-node@v5`, Node `24`, keep `Check for unresolved conflicts`, and allow `Test` before `Build` because `packages/shared` now compiles in `pretest`.
+- `packages/shared/package.json`: keep `pretest` compiling TypeScript output, and keep `test` as `node --test test/*.test.mjs`.
+- `package.json`: keep the `dev` and `hub` scripts so the Brand Settings Hub opens directly.
+- `apps/admin/package.json`: keep `dev`, `start`, `build`, `typecheck`, `lint`, and `test` pointing at `dev-server.mjs`.
+- `README.md`: keep the Direct Brand Settings Hub and Windows quick start sections.
+
+After resolving conflicts, run:
+
+```bash
+pnpm check:conflicts
+pnpm lint
+pnpm typecheck
+pnpm build
+pnpm test
+```
+
 ## How white-label switching will work
 
 1. The admin Brand Settings page edits a persisted `BrandConfig` JSON document.
