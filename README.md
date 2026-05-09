@@ -83,8 +83,8 @@ If `tsc` is not installed globally, the shared package scripts automatically fal
 
 If GitHub says `This branch has conflicts that must be resolved`, keep the current branch versions for these files:
 
-- `.github/workflows/ci.yml`: use `actions/checkout@v4`, `actions/setup-node@v4`, Node `22`, and run `Build` before `Test`.
-- `packages/shared/package.json`: keep the test command that builds TypeScript output before running `node --test`.
+- `.github/workflows/ci.yml`: use `actions/checkout@v5`, `actions/setup-node@v5`, Node `24`, keep `Check for unresolved conflicts`, and allow `Test` before `Build` because `packages/shared` now compiles in `pretest`.
+- `packages/shared/package.json`: keep `pretest` compiling TypeScript output, and keep `test` as `node --test test/*.test.mjs`.
 - `package.json`: keep the `dev` and `hub` scripts so the Brand Settings Hub opens directly.
 - `apps/admin/package.json`: keep `dev`, `start`, `build`, `typecheck`, `lint`, and `test` pointing at `dev-server.mjs`.
 - `README.md`: keep the Direct Brand Settings Hub and Windows quick start sections.
