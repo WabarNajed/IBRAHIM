@@ -5,6 +5,8 @@
   "description": "White-labeled smart hospitality and cleaning services monorepo for Rifaq / Dclean.",
   "packageManager": "pnpm@10.28.1",
   "scripts": {
+    "dev": "pnpm --filter @rifaq/admin dev",
+    "hub": "pnpm --filter @rifaq/admin dev",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
     "lint": "pnpm -r lint",

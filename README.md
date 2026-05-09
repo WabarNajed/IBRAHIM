@@ -30,6 +30,24 @@ pnpm build
 pnpm test
 ```
 
+
+## Direct Brand Settings Hub
+
+To open the runnable mock Brand Settings Hub on Windows, double-click `run-hub.cmd` from the project folder, or run:
+
+```powershell
+cd "C:\Users\Ibrah\OneDrive\سطح المكتب\IBRAHIM-codex-build-brand-settings-page"
+.\run-hub.cmd
+```
+
+The hub opens at `http://localhost:3000` and includes a live white-label preview with local mock saving. No `corepack enable` or Administrator permissions are required.
+
+For macOS/Linux or any terminal with pnpm available, run:
+
+```bash
+pnpm dev
+```
+
 ## Windows quick start
 
 If this project is on your desktop at a path like `C:\Users\Ibrah\OneDrive\سطح المكتب\IBRAHIM-codex-build-brand-settings-page`, open PowerShell and run:

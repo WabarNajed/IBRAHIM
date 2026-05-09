@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rifaq Brand Settings Hub</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">White-Label Hub</p>
+          <h1>إعدادات هوية رفاق / Rifaq</h1>
+          <p>غيّر اسم البراند، الألوان، معلومات التواصل، وشاهد المعاينة مباشرة بدون أي إعدادات إضافية.</p>
+        </div>
+        <div class="hero-card">
+          <span class="status-dot"></span>
+          <span>Mock save + live preview</span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <form id="brand-form" class="panel settings-panel">
+          <div class="panel-header">
+            <h2>Brand Settings</h2>
+            <p>هذه نسخة تشغيل مباشرة للمعاينة. الحفظ يتم محلياً في المتصفح.</p>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Brand settings sections">
+            <button type="button" class="tab is-active" data-tab="identity">الهوية</button>
+            <button type="button" class="tab" data-tab="colors">الألوان</button>
+            <button type="button" class="tab" data-tab="contact">التواصل</button>
+            <button type="button" class="tab" data-tab="features">المزايا</button>
+          </div>
+
+          <div class="tab-page is-active" id="identity">
+            <label>اسم البراند عربي<input name="brandName.ar" maxlength="30" /></label>
+            <label>Brand name English<input name="brandName.en" maxlength="30" dir="ltr" /></label>
+            <label>الشعار عربي<input name="brandTagline.ar" maxlength="80" /></label>
+            <label>English tagline<input name="brandTagline.en" maxlength="80" dir="ltr" /></label>
+            <label>Legal name<input name="legalName" dir="ltr" /></label>
+          </div>
+
+          <div class="tab-page" id="colors">
+            <div class="color-grid" id="color-grid"></div>
+          </div>
+
+          <div class="tab-page" id="contact">
+            <label>رقم الجوال<input name="contact.phone" dir="ltr" /></label>
+            <label>واتساب<input name="contact.whatsapp" dir="ltr" /></label>
+            <label>البريد الإلكتروني<input name="contact.email" type="email" dir="ltr" /></label>
+            <label>العنوان عربي<input name="contact.address.ar" /></label>
+            <label>Address English<input name="contact.address.en" dir="ltr" /></label>
+          </div>
+
+          <div class="tab-page" id="features">
+            <div class="feature-grid" id="feature-grid"></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="secondary" id="reset-button">استعادة الافتراضي</button>
+            <button type="submit" class="primary">Save & Publish Mock</button>
+          </div>
+          <p class="save-state" id="save-state">جاهز للتعديل</p>
+        </form>
+
+        <aside class="phone-panel">
+          <div class="phone" id="phone-preview">
+            <div class="phone-top">
+              <div class="logo-mark" id="logo-mark">ر</div>
+              <div>
+                <strong id="preview-name-ar">رفاق</strong>
+                <small id="preview-tagline-ar">خدمات ضيافة وتنظيف ذكية</small>
+              </div>
+            </div>
+            <div class="promo-card">
+              <span>طلب سريع</span>
+              <h3 id="preview-name-en">Rifaq</h3>
+              <p id="preview-tagline-en">Smart hospitality services</p>
+              <button>احجز الآن</button>
+            </div>
+            <div class="service-list" id="service-list"></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
