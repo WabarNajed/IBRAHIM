@@ -1,0 +1,16 @@
+{
+  "name": "@rifaq/admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "start": "node dev-server.mjs",
+    "build": "node --check dev-server.mjs",
+    "typecheck": "node --check dev-server.mjs",
+    "lint": "node --check dev-server.mjs",
+    "test": "node --check dev-server.mjs"
+  },
+  "dependencies": {
+    "@rifaq/shared": "workspace:*"
+  }
+}

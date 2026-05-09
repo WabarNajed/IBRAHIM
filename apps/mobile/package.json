@@ -1,0 +1,14 @@
+{
+  "name": "@rifaq/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Mobile app scaffolded; Expo implementation starts in deliverable #4'",
+    "typecheck": "echo 'Mobile app scaffolded; no source files yet'",
+    "lint": "echo 'Mobile app scaffolded; no source files yet'",
+    "test": "echo 'Mobile app scaffolded; no tests yet'"
+  },
+  "dependencies": {
+    "@rifaq/shared": "workspace:*"
+  }
+}
